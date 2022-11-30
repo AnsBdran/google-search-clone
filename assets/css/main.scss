@@ -1,0 +1,87 @@
+@use "./sass" as *;
+
+// ===========================================================================================
+// General styles =============================
+body {
+    padding: 2.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h3 a,
+figcaption {
+    color: $alt-text;
+    font-weight: 400;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+// ===========================================================================================
+// Header styles =============================
+* {
+}
+.header {
+    border-bottom: .5px solid red;
+    &__upper {
+        @include flex;
+
+        .search {
+            border: 2px solid red;
+            @include flex;
+            height: 2.5rem;
+            max-width: 33rem;
+            padding-inline: $sp-6;
+            // overflow: hidden;
+
+            input {
+                height: 100%;
+                background: none;
+            }
+
+            &__icons {
+                @include flex;
+                height: 100%;
+
+                & > * {
+                    width: 1.5rem;
+                }
+            }
+        }
+    }
+
+    &__lower {
+        nav {
+            @include flex(start);
+        }
+    }
+}
+
+// ===========================================================================================
+// Results  styles =============================
+main {
+    p {
+        padding-top: $sp-5;
+    }
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding-top: $sp-3;
+
+    &__left {
+        border: 2px solid red;
+        & > *:not(:last-child) {
+            margin-bottom: $sp-2;
+        }
+        .result {
+        }
+    }
+}
+
+// ===========================================================================================
+// Header styles =============================
