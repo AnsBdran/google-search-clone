@@ -1,4 +1,4 @@
-@use "./sass" as *;
+@use "./sass"as *;
 
 // ===========================================================================================
 // General styles =============================
@@ -14,17 +14,21 @@ h3 a,
 figcaption {
     color: $alt-text;
     font-weight: 400;
+    font-size: 1.25rem;
+    border: .5px solid gray;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
 // ===========================================================================================
 // Header styles =============================
-* {
-}
+* {}
+
 .header {
     border-bottom: .5px solid red;
+
     &__upper {
         @include flex;
 
@@ -62,7 +66,10 @@ a:hover {
 // ===========================================================================================
 // Results  styles =============================
 main {
-    p {
+    
+    max-width: 1200px;
+    margin-inline: auto;
+    & > p {
         padding-top: $sp-5;
     }
 }
@@ -71,14 +78,46 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
-    padding-top: $sp-3;
+    padding-top: $sp-6;
 
     &__left {
-        border: 2px solid red;
+
         & > *:not(:last-child) {
-            margin-bottom: $sp-2;
+            margin-bottom: $sp-3;
         }
+
         .result {
+            p:last-child {
+            margin-top: $sp-6;
+                max-width: 60%;
+            }
+        }
+    }
+    
+    &__right {
+        border: 1px solid gray;
+        
+        .imgs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items:  stretch;
+//            justify-items: stretch;
+//            border: 1px solid blue;
+            
+            & :first-child {
+                grid-row: 1/3;
+//                justify-self: center;
+            border: 1px solid blue;
+            }
+        }
+        
+        .title {
+            padding: $sm-pd;
+            border-bottom: 1px solid gray;
+        }
+        
+        .desc {
+            padding: $sm-pd;
         }
     }
 }
